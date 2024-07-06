@@ -1,4 +1,4 @@
-import applicationStack from "./index.js";
+import applicationStack from "./app.js";
 
 const {
     attachCoreMiddlewares,
