@@ -1,10 +1,10 @@
-import applicationStack from "./app.js";
+import applicationStack from "./index.js";
 
- const {
+const {
     attachCoreMiddlewares,
     attachExternalMiddlewares,
     attachRouters,
-    upServer
+    upServer,
   } = applicationStack,
   bootstrap = async () => {
     await attachCoreMiddlewares();
