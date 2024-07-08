@@ -43,7 +43,17 @@ const app = express(),
     server.maxHeaderSize = 10 * 1024 * 1024; // 10MB
 
     server.listen(parseInt(defaultConfig.serverPort));
-    server.once("listening", () => {});
+    server.once("listening", () =>
+      console.log(
+        APPCONSTANTS.MESSAGES.SERVER_STARTED.replace(
+          "PORT",
+          defaultConfig.serverPort
+        ).replace(
+          "TIME",
+          new Date().toString() + ` ${defaultConfig.appTimezone}`
+        )
+      )
+    );
     server.on("error", (error) => {
       throw error;
     });
